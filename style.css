@@ -3,3 +3,13 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+.container {
+    display: flex;
+}
+
+.cell {
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+}
