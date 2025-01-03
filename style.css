@@ -31,7 +31,3 @@ html, body {
     width: 40px;
     border: 0.5px solid black;
 }
-
-.cell:hover {
-    background-color: black;
-}
