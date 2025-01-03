@@ -29,13 +29,23 @@ function adjustGrid(n) {
 
 // grid toggle
 grid_toggle.addEventListener("click", (e) => {
+    const cells = document.querySelectorAll(".cell");
+    const cell = document.querySelector(".cell");
     if(grid_toggle.id==="on") {
         grid_toggle.id = "off";
         grid_toggle.textContent = "Show grid";
+        cells.forEach((cell) => {
+            cell.classList.remove = "hide";
+            cell.classList.add = "show";
+        })
     }
     else {
         grid_toggle.id = "on";
         grid_toggle.textContent = "Hide grid";
+        cells.forEach((cell) => {
+            cell.classList.remove = "show";
+            cell.classList.add = "hide";
+        })
     }
 });
 
