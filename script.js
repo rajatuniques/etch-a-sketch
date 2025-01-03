@@ -10,6 +10,7 @@ function adjustGrid(n) {
     for(let i=1; i<n*n; i++) {
         const childCell = document.createElement("div");
         childCell.classList.add("cell");
+        childCell.classList.add("show");
         childCell.style.height = `${size_calc}%`;
         childCell.style.width = `${size_calc}%`;
         container.appendChild(childCell);
@@ -35,17 +36,22 @@ grid_toggle.addEventListener("click", (e) => {
         grid_toggle.id = "off";
         grid_toggle.textContent = "Show grid";
         cells.forEach((cell) => {
-            cell.classList.remove = "hide";
-            cell.classList.add = "show";
+            if(cell.classList.contains("show")) {
+                cell.classList.remove("show");
+            }
+            cell.classList.add("hide");
         })
     }
     else {
         grid_toggle.id = "on";
         grid_toggle.textContent = "Hide grid";
         cells.forEach((cell) => {
-            cell.classList.remove = "show";
-            cell.classList.add = "hide";
+            if(cell.classList.contains("hide")) {
+                cell.classList.remove("hide");
+            }
+            cell.classList.add("show");
         })
+        
     }
 });
 
@@ -63,6 +69,7 @@ dimension_btn.addEventListener("click", (e) => {
     }
     const childCell = document.createElement("div");
     childCell.classList.add("cell");
+    childCell.classList.add("show");
     let size_calc = 100/side;
     childCell.style.height = `${size_calc}%`;
     childCell.style.width = `${size_calc}%`;
