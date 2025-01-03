@@ -18,8 +18,8 @@ html, body {
 .container {
     display: flex;
     flex-flow: row wrap;
-    width: 960px;
-    height: 960px;
+    width: 90vw;
+    height: 90vw;
     justify-content: center;
     align-items: center;
     align-self: center;
