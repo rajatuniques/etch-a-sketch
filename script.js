@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const dimension_btn = document.querySelector(".select");
+const grid_toggle = document.querySelector(".grid-toggle");
 
 function adjustGrid(n) {
     const cell = document.querySelector(".cell");
@@ -25,6 +26,19 @@ function adjustGrid(n) {
         })
     });
 }
+
+// grid toggle
+grid_toggle.addEventListener("click", (e) => {
+    if(grid_toggle.id==="on") {
+        grid_toggle.id = "off";
+        grid_toggle.textContent = "Show grid";
+    }
+    else {
+        grid_toggle.id = "on";
+        grid_toggle.textContent = "Hide grid";
+    }
+});
+
 // modulate grid size through button
 dimension_btn.addEventListener("click", (e) => {
     const cell = document.querySelector(".cell");
