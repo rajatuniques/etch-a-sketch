@@ -14,7 +14,8 @@ body {
 html, body {
     height: 100%;
 }
-.select {
+.select,
+.grid-toggle {
     width: 40vw;
     height: 4vw;
     font-size: 1.5em;
