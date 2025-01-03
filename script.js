@@ -12,4 +12,8 @@ cells.forEach((cell) => {
     cell.addEventListener("mouseenter", () => {
         cell.style.background = "black";
     })
+
+    cell.addEventListener("mouseleave", () => {
+        cell.style.background = "white";
+    })
 });
