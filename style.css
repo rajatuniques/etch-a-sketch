@@ -39,5 +39,13 @@ html, body {
     flex: 1 1 auto;
     height: 24%;
     width: 24%;
+    
+}
+
+#on {
     border: 0.1em solid black;
+}
+
+#off {
+    border: 0px;
 }
