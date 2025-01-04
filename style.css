@@ -20,8 +20,9 @@ html, body {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    align-content: flex-start;
     row-gap: 2px;
-    column-gap: 8px;
+    column-gap: 4px;
     flex: 1;
 }
 
@@ -48,8 +49,9 @@ html, body {
     border: 3px solid black;
     margin: auto;
     align-content: center;
-    flex-shrink: 0;
-    margin-bottom: 10px;
+    flex-shrink: 1;
+    flex-grow: 0;
+    margin: 10px;
 }
 
 .cell {
