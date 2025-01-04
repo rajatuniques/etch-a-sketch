@@ -32,7 +32,7 @@ html, body {
     max-width: 200px;
     height: 100px;
     padding: 14px 30px;
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     font-size: 20px;
 }
 
@@ -48,6 +48,8 @@ html, body {
     border: 3px solid black;
     margin: auto;
     align-content: center;
+    flex-shrink: 0;
+    margin-bottom: 10px;
 }
 
 .cell {
