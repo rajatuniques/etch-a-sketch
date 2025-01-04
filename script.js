@@ -106,13 +106,19 @@ rgb_btn.addEventListener("click", (e) => {
 
 opaque_btn.addEventListener("click", (e) => {
     current_pen = opaque_btn;
-    pen_color = "#1F2428";
 });
 
 // enable eraser
 eraser.addEventListener("click", (e) => {
     current_pen = opaque_btn;
     pen_color = "white";
+});
+
+// select color
+clr_slt_btn.addEventListener("click", (e) => {
+    let color_selected = document.getElementById("color");
+    current_pen = opaque_btn;
+    pen_color = color_selected.value;
 });
 
 // generate random color
