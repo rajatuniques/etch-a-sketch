@@ -144,7 +144,7 @@ function generateRandomRGB() {
     return `rgb(${a}, ${b}, ${c})`;
 }
 
-adjustGrid(12);
+adjustGrid(100);
 
 
 
