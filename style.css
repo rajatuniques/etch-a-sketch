@@ -31,7 +31,9 @@ html, body {
 .select,
 .grid-toggle,
 .random-rgb,
-.opaque {
+.opaque,
+.eraser,
+.color-div {
     height: 50%;
     padding: 2px 4px;
     flex: 1 0 40%;
