@@ -4,20 +4,23 @@ const grid_toggle = document.querySelector(".grid-toggle");
 const rgb_btn = document.querySelector(".random-rgb");
 const opaque_btn = document.querySelector(".opaque");
 
-let pen_color = "#1F2428";
+let pen_color = "black";
 let current_pen = opaque_btn;
+let opacity = 0.1;
 
 function adjustGrid(n) {
     const cell = document.querySelector(".cell");
     let size_calc = 100/n;
     cell.style.height = `${size_calc}%`;
     cell.style.width = `${size_calc}%`;
+    cell.style.opacity = 0.2;
     for(let i=1; i<n*n; i++) {
         const childCell = document.createElement("div");
         childCell.classList.add("cell");
         childCell.classList.add("show");
         childCell.style.height = `${size_calc}%`;
         childCell.style.width = `${size_calc}%`;
+        childCell.style.opacity = 0.2;
         container.appendChild(childCell);
     }
     const cells = document.querySelectorAll(".cell");
@@ -29,9 +32,14 @@ function adjustGrid(n) {
     
         cell.addEventListener("mouseleave", () => {
             if(current_pen===opaque_btn) {
+                if(cell.style.opacity < 1) {
+                    let current_opacity = +cell.style.opacity;
+                    cell.style.opacity = current_opacity + 0.3;
+                }
                 cell.style.background = pen_color;
             }
             else if(current_pen===rgb_btn) {
+                cell.style.opacity = 1;
                 cell.style.background = generateRandomRGB();
             }
         })
@@ -84,6 +92,7 @@ dimension_btn.addEventListener("click", (e) => {
     let size_calc = 100/side;
     childCell.style.height = `${size_calc}%`;
     childCell.style.width = `${size_calc}%`;
+    childCell.style.opacity = 0.2;
     container.appendChild(childCell);
     adjustGrid(side);
 });
@@ -91,7 +100,6 @@ dimension_btn.addEventListener("click", (e) => {
 // pen color toggles
 rgb_btn.addEventListener("click", (e) => {
     current_pen = rgb_btn;
-    pen_color = generateRandomRGB();
 });
 
 opaque_btn.addEventListener("click", (e) => {
