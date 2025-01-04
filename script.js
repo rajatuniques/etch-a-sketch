@@ -106,12 +106,23 @@ rgb_btn.addEventListener("click", (e) => {
 
 opaque_btn.addEventListener("click", (e) => {
     current_pen = opaque_btn;
+    if(eraser_selected) {
+        pen_color = pen_color_backup;
+        eraser_selected = 0;
+    }
+    else {
+        pen_color = color_selected.value;
+    }
 });
 
 // enable eraser
+let eraser_selected = 0;
+let pen_color_backup = pen_color;
 eraser.addEventListener("click", (e) => {
     current_pen = opaque_btn;
+    pen_color_backup = pen_color;
     pen_color = "white";
+    eraser_selected = 1;
 });
 
 // select color
@@ -133,7 +144,7 @@ function generateRandomRGB() {
     return `rgb(${a}, ${b}, ${c})`;
 }
 
-adjustGrid(100);
+adjustGrid(12);
 
 
 
