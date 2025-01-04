@@ -3,6 +3,8 @@ const dimension_btn = document.querySelector(".select");
 const grid_toggle = document.querySelector(".grid-toggle");
 const rgb_btn = document.querySelector(".random-rgb");
 const opaque_btn = document.querySelector(".opaque");
+const eraser = document.querySelector(".eraser");
+const clr_slt_btn = document.querySelector(".color-selected");
 
 let pen_color = "black";
 let current_pen = opaque_btn;
@@ -105,6 +107,12 @@ rgb_btn.addEventListener("click", (e) => {
 opaque_btn.addEventListener("click", (e) => {
     current_pen = opaque_btn;
     pen_color = "#1F2428";
+});
+
+// enable eraser
+eraser.addEventListener("click", (e) => {
+    current_pen = opaque_btn;
+    pen_color = "white";
 });
 
 // generate random color
