@@ -30,11 +30,11 @@ html, body {
 .grid-toggle,
 .random-rgb,
 .opaque {
-    max-width: 200px;
-    height: 100px;
-    padding: 14px 30px;
+    width: 15vw;
+    height: 8vw;
+    padding: 10px 25px;
     flex: 1 1 auto;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .container {
