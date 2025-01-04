@@ -41,17 +41,16 @@ html, body {
 .container {
     display: flex;
     flex-flow: row wrap;
-    max-width: 90vw;
-    max-height: 90vw;
-    min-width: 70vw;
-    min-height: 70vw;
+    width: 90vw;
+    height: 90vw;
+    max-width: 800px;
+    max-height: 800px;
     justify-content: center;
     align-items: center;
     align-self: center;
     border: 3px solid black;
     margin: auto;
     align-content: center;
-    flex: 1 1 auto;
     margin: 10px;
 }
 
@@ -67,5 +66,5 @@ html, body {
 }
 
 .hide {
-    border: 0.01px solid white;
+    border: 0px;
 }
