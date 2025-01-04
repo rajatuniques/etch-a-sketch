@@ -5,6 +5,7 @@ const rgb_btn = document.querySelector(".random-rgb");
 const opaque_btn = document.querySelector(".opaque");
 
 let pen_color = "#1F2428";
+let current_pen = opaque_btn;
 
 function adjustGrid(n) {
     const cell = document.querySelector(".cell");
@@ -27,7 +28,12 @@ function adjustGrid(n) {
         })
     
         cell.addEventListener("mouseleave", () => {
-            cell.style.background = pen_color;
+            if(current_pen===opaque_btn) {
+                cell.style.background = pen_color;
+            }
+            else if(current_pen===rgb_btn) {
+                cell.style.background = generateRandomRGB();
+            }
         })
     });
 }
@@ -84,13 +90,26 @@ dimension_btn.addEventListener("click", (e) => {
 
 // pen color toggles
 rgb_btn.addEventListener("click", (e) => {
-    pen_color = "red";
+    current_pen = rgb_btn;
+    pen_color = generateRandomRGB();
 });
 
 opaque_btn.addEventListener("click", (e) => {
+    current_pen = opaque_btn;
     pen_color = "#1F2428";
 });
 
+// generate random color
+function randomColorNo() {
+    return Math.floor(Math.random() * 256);
+}
+
+function generateRandomRGB() {
+    let a = `${randomColorNo()}`;
+    let b = `${randomColorNo()}`;
+    let c = `${randomColorNo()}`;
+    return `rgb(${a}, ${b}, ${c})`;
+}
 
 adjustGrid(100);
 
