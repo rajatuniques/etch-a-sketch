@@ -1,6 +1,10 @@
 const container = document.querySelector(".container");
 const dimension_btn = document.querySelector(".select");
 const grid_toggle = document.querySelector(".grid-toggle");
+const rgb_btn = document.querySelector(".random-rgb");
+const opaque_btn = document.querySelector(".opaque");
+
+let pen_color = "#1F2428";
 
 function adjustGrid(n) {
     const cell = document.querySelector(".cell");
@@ -23,7 +27,7 @@ function adjustGrid(n) {
         })
     
         cell.addEventListener("mouseleave", () => {
-            cell.style.background = "#1F2428";
+            cell.style.background = pen_color;
         })
     });
 }
@@ -34,7 +38,7 @@ grid_toggle.addEventListener("click", (e) => {
     const cell = document.querySelector(".cell");
     if(grid_toggle.id==="on") {
         grid_toggle.id = "off";
-        grid_toggle.textContent = "Show grid";
+        grid_toggle.textContent = "Show Grid";
         cells.forEach((cell) => {
             if(cell.classList.contains("show")) {
                 cell.classList.remove("show");
@@ -44,7 +48,7 @@ grid_toggle.addEventListener("click", (e) => {
     }
     else {
         grid_toggle.id = "on";
-        grid_toggle.textContent = "Hide grid";
+        grid_toggle.textContent = "Hide Grid";
         cells.forEach((cell) => {
             if(cell.classList.contains("hide")) {
                 cell.classList.remove("hide");
@@ -54,6 +58,7 @@ grid_toggle.addEventListener("click", (e) => {
         
     }
 });
+
 
 // modulate grid size through button
 dimension_btn.addEventListener("click", (e) => {
@@ -76,6 +81,16 @@ dimension_btn.addEventListener("click", (e) => {
     container.appendChild(childCell);
     adjustGrid(side);
 });
+
+// pen color toggles
+rgb_btn.addEventListener("click", (e) => {
+    pen_color = "red";
+});
+
+opaque_btn.addEventListener("click", (e) => {
+    pen_color = "#1F2428";
+});
+
 
 adjustGrid(100);
 
