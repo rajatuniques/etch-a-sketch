@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    background-color: rgb(26, 26, 33);
     
 }
 
@@ -59,10 +60,12 @@ html, body {
     justify-content: center;
     align-items: center;
     align-self: center;
-    border: 3px solid black;
+    border: 4px solid rgb(59, 59, 59);
+    box-shadow: 4px 10px 5px rgb(128, 128, 128);
     margin: auto;
     align-content: center;
     margin: 10px;
+    background-color: white;
 }
 
 .cell {
@@ -78,4 +81,28 @@ html, body {
 
 .hide {
     border: 0px;
+}
+
+button,
+.color-div {
+    background-color: rgb(26, 26, 33);
+    color: white;
+    border: 1px solid white;
+}
+
+button:hover,
+.color-div:hover {
+    background-color: rgb(207, 207, 207);
+    color: rgb(26, 26, 33);
+    border: 1px solid rgb(26, 26, 33);
+}
+
+#color {
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.color-div {
+    display: flex;
+    justify-content: center;
 }
