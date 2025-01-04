@@ -17,12 +17,18 @@ html, body {
 
 .buttons {
     display: flex;
-    justify-content: space-evenly;
-    gap: 8px;
+    flex-flow: row wrap;
+    justify-content: center;
+    row-gap: 2px;
+    column-gap: 8px;
+    align-content: center;
+    flex: 1 1 auto;
 }
 
 .select,
-.grid-toggle {
+.grid-toggle,
+.random-rgb,
+.opaque {
     width: 400px;
     height: 40px;
     font-size: 20px;
